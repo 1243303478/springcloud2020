@@ -11,5 +11,5 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Payment implements Serializable {
     long id;
-    String seria;
+    String serial;
 }
