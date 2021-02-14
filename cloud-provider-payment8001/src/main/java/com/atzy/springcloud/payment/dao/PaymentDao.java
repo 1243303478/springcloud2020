@@ -13,5 +13,5 @@ public interface PaymentDao {
      * @param payment
      * @return
      */
-    Payment getPaymentInfo(@Param("payment") Payment payment);
+    Payment getPaymentInfo(@Param("id") long id);
 }

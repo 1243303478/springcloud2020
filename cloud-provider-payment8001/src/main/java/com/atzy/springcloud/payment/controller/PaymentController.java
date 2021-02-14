@@ -5,9 +5,7 @@ import com.atzy.springcloud.payment.beans.Payment;
 import com.atzy.springcloud.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PaymentController {
@@ -16,7 +14,7 @@ public class PaymentController {
     PaymentService paymentService;
 
     @PostMapping("create")
-    public CommonResult<String> create(Payment payment){
+    public CommonResult<String> create(@RequestBody Payment payment){
         int result = paymentService.createPayment(payment);
         if(result > 0 ){
             return new CommonResult<String>(200,"插入成功!");
@@ -25,11 +23,10 @@ public class PaymentController {
         }
     }
 
-    @GetMapping("get")
-    public CommonResult<Payment> getPayment(Payment payment){
+    @GetMapping("get/{id}")
+    public CommonResult<Payment> getPayment(@PathVariable("id") long id){
         CommonResult<Payment> result = null;
-
-        Payment info = paymentService.getPaymentInfo(payment);
+        Payment info = paymentService.getPaymentInfo(id);
         if(StringUtils.isEmpty(info)){
             result = new CommonResult<>(200, "未找到对应信息!");
         }else{

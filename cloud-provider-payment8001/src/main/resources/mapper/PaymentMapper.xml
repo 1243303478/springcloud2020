@@ -9,6 +9,6 @@
 
     <!--    Payment getPaymentInfo(Payment payment);-->
     <select id="getPaymentInfo" resultType="Payment">
-        select * from payment where id = #{payment.id};
+        select * from payment where id = #{id};
     </select>
 </mapper>

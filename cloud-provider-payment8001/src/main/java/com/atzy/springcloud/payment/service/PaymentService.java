@@ -5,5 +5,5 @@ import com.atzy.springcloud.payment.beans.Payment;
 public interface PaymentService {
     int createPayment(Payment payment);
 
-    Payment getPaymentInfo(Payment payment);
+    Payment getPaymentInfo(long id);
 }
