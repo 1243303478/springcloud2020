@@ -1,4 +1,4 @@
-package com.atzy.springcloud.payment.beans;
+package com.atzy.springcloud.beans;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

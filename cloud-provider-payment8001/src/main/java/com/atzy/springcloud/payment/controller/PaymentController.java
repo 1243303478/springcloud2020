@@ -1,7 +1,7 @@
 package com.atzy.springcloud.payment.controller;
 
-import com.atzy.springcloud.payment.beans.CommonResult;
-import com.atzy.springcloud.payment.beans.Payment;
+import com.atzy.springcloud.beans.CommonResult;
+import com.atzy.springcloud.beans.Payment;
 import com.atzy.springcloud.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;

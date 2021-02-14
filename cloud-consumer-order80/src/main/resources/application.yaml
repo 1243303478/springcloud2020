@@ -12,4 +12,4 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.atzy.springcloud.order.beans
+  type-aliases-package: com.atzy.springcloud.beans

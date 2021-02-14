@@ -1,6 +1,6 @@
 package com.atzy.springcloud.payment.dao;
 
-import com.atzy.springcloud.payment.beans.Payment;
+import com.atzy.springcloud.beans.Payment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -10,7 +10,7 @@ public interface PaymentDao {
 
     /**
      * 根据传进来的id 查询对应serial
-     * @param payment
+     * @param id
      * @return
      */
     Payment getPaymentInfo(@Param("id") long id);

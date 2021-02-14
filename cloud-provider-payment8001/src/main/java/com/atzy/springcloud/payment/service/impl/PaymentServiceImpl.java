@@ -1,6 +1,6 @@
 package com.atzy.springcloud.payment.service.impl;
 
-import com.atzy.springcloud.payment.beans.Payment;
+import com.atzy.springcloud.beans.Payment;
 import com.atzy.springcloud.payment.dao.PaymentDao;
 import com.atzy.springcloud.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;

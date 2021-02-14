@@ -1,7 +1,7 @@
 package com.atzy.springcloud.order.controller;
 
-import com.atzy.springcloud.order.beans.CommonResult;
-import com.atzy.springcloud.order.beans.Payment;
+import com.atzy.springcloud.beans.CommonResult;
+import com.atzy.springcloud.beans.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
