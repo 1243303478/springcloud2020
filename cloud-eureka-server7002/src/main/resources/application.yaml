@@ -1,15 +1,15 @@
 server:
-  port: 7001
+  port: 7002
 spring:
   application:
     name: cloud-eureka-server7001
 eureka:
   instance:
-    appname: eureka7001.com
+    appname: eureka7002.com
   client:
     register-with-eureka: false
     fetch-registry: true
     service-url:
 #      defaultZone: http://${eureka.instance.appname}:${server.port}/eureka/
       # 集群版
-      defaultZone: http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
