@@ -1,8 +1,8 @@
 server:
-  port: 80
+  port: 8002
 spring:
   application:
-    name: cloud-order-consumer
+    name: cloud-payment-service
   datasource:
     username: root
     type: com.alibaba.druid.pool.DruidDataSource
@@ -13,10 +13,7 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.atzy.springcloud.beans
-
 eureka:
-  instance:
-    appname: cloud-order-consumer
   client:
     register-with-eureka: true
     fetch-registry: true
