@@ -18,7 +18,12 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
+#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
   instance:
     instance-id: cloud-payment-service-8001
     prefer-ip-address: true
+    #设置发送心跳时间
+    lease-renewal-interval-in-seconds: 1
+    #设置服务器收到心跳时间后等待的时间 超时将剔除服务
+    lease-expiration-duration-in-seconds: 2

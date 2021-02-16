@@ -10,6 +10,9 @@ eureka:
     register-with-eureka: false
     fetch-registry: true
     service-url:
-#      defaultZone: http://${eureka.instance.appname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.appname}:${server.port}/eureka/
       # 集群版
-      defaultZone: http://eureka7002.com:7002/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
+#      defaultZone: http://eureka7002.com:7002/eureka/
