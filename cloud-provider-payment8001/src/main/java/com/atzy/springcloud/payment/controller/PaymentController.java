@@ -3,12 +3,18 @@ package com.atzy.springcloud.payment.controller;
 import com.atzy.springcloud.beans.CommonResult;
 import com.atzy.springcloud.beans.Payment;
 import com.atzy.springcloud.payment.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
+@Slf4j
 public class PaymentController {
 
     @Autowired
@@ -16,6 +22,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String server_port;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @PostMapping("create")
     public CommonResult<String> create(@RequestBody Payment payment){
@@ -38,5 +47,19 @@ public class PaymentController {
         }
         result.setData(info);
         return result;
+    }
+
+    @GetMapping("discovery/info")
+    public DiscoveryClient discoveryClientInfo(){
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            log.info(service);
+        }
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        for (ServiceInstance instance : instances) {
+            log.info("当前实例信息: " + instance.getInstanceId() + "\t HOST:"+ instance.getHost() + "\t port" + instance.getPort());
+        }
+        log.info("discoveryClient 信息:" );
+        return discoveryClient;
     }
 }
