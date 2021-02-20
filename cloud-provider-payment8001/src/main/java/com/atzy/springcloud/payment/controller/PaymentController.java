@@ -3,6 +3,7 @@ package com.atzy.springcloud.payment.controller;
 import com.atzy.springcloud.beans.CommonResult;
 import com.atzy.springcloud.beans.Payment;
 import com.atzy.springcloud.payment.service.PaymentService;
+import io.micrometer.core.instrument.util.TimeUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -64,6 +65,15 @@ public class PaymentController {
     }
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB() {
+        return server_port;
+    }
+    @GetMapping(value = "/payment/timeout")
+    public String getPaymentTimeout() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return server_port;
     }
 }
