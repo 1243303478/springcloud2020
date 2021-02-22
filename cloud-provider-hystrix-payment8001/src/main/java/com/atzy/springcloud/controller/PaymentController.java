@@ -61,4 +61,10 @@ public class PaymentController {
     public String payment_Global_FallbackMethod() {
         return "Global 方法 对方系统繁忙或已宕机,请10秒钟后重试o(╥﹏╥)o";
     }
+    @GetMapping("/payment/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String result = paymentService.paymentCircuitBreaker(id);
+        log.info("*****result:" + result);
+        return result;
+    }
 }

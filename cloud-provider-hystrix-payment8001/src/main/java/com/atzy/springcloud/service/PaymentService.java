@@ -12,4 +12,7 @@ public interface PaymentService {
      * @return
      */
     String paymentInfo_TimeOut(Integer id);
+
+
+    String paymentCircuitBreaker(Integer id);
 }
