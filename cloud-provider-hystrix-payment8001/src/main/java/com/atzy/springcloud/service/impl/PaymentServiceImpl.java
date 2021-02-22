@@ -14,10 +14,7 @@ public class PaymentServiceImpl implements PaymentService {
         return "线程池:" + Thread.currentThread().getName() + " paymentInfo_OK,id:" + id + "\t" + "O(∩_∩)O哈哈~";
     }
 
-    @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandle",
-            commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "3000")
-    })
+
     @Override
     public String paymentInfo_TimeOut(Integer id) {
         int timeNumber = 5;
@@ -31,7 +28,5 @@ public class PaymentServiceImpl implements PaymentService {
         return "线程池:" + Thread.currentThread().getName() + " paymentInfo_TimeOut,id:" + id + "\t" +
                 "O(∩_∩)O哈哈~  耗时(秒)" + timeNumber;
     }
-    public String paymentInfo_TimeOutHandle(Integer id){
-        return "o(╥﹏╥)o调用支付接口超时或异常: \t" + "当前线程名字" +Thread.currentThread().getName();
-    }
+
 }
