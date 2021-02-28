@@ -5,22 +5,21 @@ spring:
     name: cloud-stream-rabbitmq-provider8801
   cloud:
     stream:
-      rabbit:
-        binders: #配置rabbitMq的信息
-          defaultRabbit: #表示定义的名称，用于binding整合
-            type: rabbit #消息组件类型
-            environment: # 设置rabbitmq的相关的环境配置
-              spring:
-                rabbitmq:
-                  host: localhost
-                  port: 5672
-                  username: guest
-                  password: guest
-        bindings: #服务的整合处理
-          output: #这个名字是一个通道的名称
-            destination: studyExchange #表示要使用的exchange名称定义
-            content-type: application/json #设置消息类型，本次为json
-            binder: defaultRabbit  #设置要绑定的消息服务的具体设置
+      binders: #配置rabbitMq的信息
+        default_rabbit: #表示定义的名称，用于binding整合
+          type: rabbit #消息组件类型
+          environment: # 设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      bindings: #服务的整合处理
+        output: #这个名字是一个通道的名称
+          destination: default.message #表示要使用的exchange名称定义
+          content-type: application/json #设置消息类型，本次为json
+          binder: default_rabbit  #设置要绑定的消息服务的具体设置
 
 
 eureka:
