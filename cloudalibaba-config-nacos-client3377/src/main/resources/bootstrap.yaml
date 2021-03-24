@@ -1,0 +1,17 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: cloudalibaba-config-nacos-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848 #Nacos作为配置地址
+        file-extension: yaml #制定配置文件格式
+        #group: DEFAULT_GROUP
+        #group: DEV_GROUP
+        namespace: c7d31a76-d18b-4bf2-a2a1-507ed902fad1
+
+#${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
