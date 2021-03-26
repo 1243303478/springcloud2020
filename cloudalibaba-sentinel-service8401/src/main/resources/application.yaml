@@ -12,6 +12,14 @@ spring:
         dashboard: localhost:8080
         port: 8719
       #配置sentineldashboard地址
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data_type: json
+            rule_type: flow
 management:
   endpoints:
     web:
