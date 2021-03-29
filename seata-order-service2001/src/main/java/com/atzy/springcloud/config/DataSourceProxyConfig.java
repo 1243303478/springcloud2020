@@ -1,4 +1,4 @@
-package com.atzy.springcloud.dao;
+package com.atzy.springcloud.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import io.seata.rm.datasource.DataSourceProxy;
