@@ -5,7 +5,7 @@
 <!--    Storage changeStorage(@Param("productId") long productId,@Param("num") Integer num);-->
     <update id="changeStorage" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         update `t_storage` set used = `used` + #{num} ,
-        `residue` = `residue` + #{num}
+        `residue` = `residue` - #{num}
         where product_id = #{productId}
     </update>
 </mapper>
