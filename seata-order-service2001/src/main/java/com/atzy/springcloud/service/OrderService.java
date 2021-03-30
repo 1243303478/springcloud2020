@@ -6,9 +6,8 @@ public interface OrderService {
     /**
      * 创建一个新的订单
      * @param order
-     * @return
      */
-    Order createOrder(Order order);
+    void createOrder(Order order);
 
     /**
      * 修改对应id订单的状态

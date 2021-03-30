@@ -14,7 +14,7 @@ public class StorageServiceImpl implements StorageService {
     StorageDao storageDao;
 
     @Override
-    public Storage changeStorage(long productId, Integer num) {
-        return storageDao.changeStorage(productId,num);
+    public void changeStorage(long productId, Integer num) {
+        storageDao.changeStorage(productId,num);
     }
 }

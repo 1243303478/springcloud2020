@@ -21,8 +21,8 @@ public class OrderController {
         if(order.getUserId() != 0){
             orderService.createOrder(order);
         }
-        result.setCode(444);
-        result.setMsg("用户id不能为空");
+        result.setCode(200);
+        result.setMsg("创建成功");
         return result;
     }
 }

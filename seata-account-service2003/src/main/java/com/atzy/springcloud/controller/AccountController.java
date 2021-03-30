@@ -3,6 +3,7 @@ package com.atzy.springcloud.controller;
 import com.atzy.springcloud.domain.CommonResult;
 import com.atzy.springcloud.service.AccountService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -15,7 +16,7 @@ public class AccountController {
     AccountService accountService;
 
     @PostMapping("/account/change")
-    public CommonResult<Object> changeUserAccount(long userId, BigDecimal money){
+    public CommonResult<Object> changeUserAccount(@RequestParam("userId") long userId, @RequestParam("money") BigDecimal money){
         accountService.changeAccount(userId,money);
         return new CommonResult<>(200,"操作成功");
     }

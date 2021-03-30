@@ -7,5 +7,5 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface StorageDao {
 
-    Storage changeStorage(@Param("productId") long productId,@Param("num") Integer num);
+    void changeStorage(@Param("productId") long productId,@Param("num") Integer num);
 }

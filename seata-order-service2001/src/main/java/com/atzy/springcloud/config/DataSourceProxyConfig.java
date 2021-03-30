@@ -15,6 +15,7 @@ import java.io.IOException;
 
 @Configuration
 public class DataSourceProxyConfig {
+
     @Value("${mybatis.mapper-locations}")
     private String mapperLocations;
 
