@@ -3,13 +3,13 @@
 
 <mapper namespace="com.atzy.springcloud.dao.OrderDao">
 
-    <insert id="createOrder" useGeneratedKeys="true" keyColumn="int" keyProperty="id">
-        insert into `t_order` (`int`,`user_id`,`product_id`,`count`,`money`,`status`)
+    <insert id="createOrder" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into `t_order` (`id`,`user_id`,`product_id`,`count`,`money`,`status`)
         values(null,#{userId},#{productId},#{count},#{money},0);
     </insert>
 
     <update id="updateOrderStatus">
         update `t_order` set `status` = 1
-        where `int` = #{id} and `status` = #{status};
+        where `id` = #{id} and `status` = #{status};
     </update>
 </mapper>
